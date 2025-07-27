@@ -1,0 +1,36 @@
+.split-screen {
+  display: flex;
+  height: 100vh;
+  overflow: hidden;
+}
+
+.half {
+  flex: 1;
+  position: relative;
+  background-size: cover;
+  background-position: center;
+  transition: flex 0.5s ease-in-out;
+  cursor: pointer;
+}
+
+.travel {
+  background-image: url('../images/travel-illustration.jpeg');
+}
+
+.recipe {
+  background-image: url('../images/recipe-illustration.jpg');
+}
+
+.half:hover {
+  flex: 2;
+}
+
+.overlay {
+  background-color: rgba(0, 0, 0, 0.5);
+  color: white;
+  padding: 2rem;
+  position: absolute;
+  bottom: 0;
+  width: 100%;
+  text-align: center;
+}

@@ -1,0 +1,22 @@
+version: '3.8'
+services:
+  db:
+    image: postgres:16
+    container_name: postgres-blog
+    environment:
+      POSTGRES_DB: iggytheblog
+      POSTGRES_USER: personalblog
+      POSTGRES_PASSWORD: personalblog
+    ports:
+      - "5432:5432"
+
+  app:
+    image: iggytheblog:latest
+    ports:
+      - "8080:8080"
+    depends_on:
+      - db
+    environment:
+      SPRING_DATASOURCE_URL: jdbc:postgresql://db:5432/iggytheblog
+      SPRING_DATASOURCE_USERNAME: personalblog
+      SPRING_DATASOURCE_PASSWORD: personalblog
