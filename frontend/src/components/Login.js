@@ -1,29 +1,47 @@
-import React, { useState } from 'react';
-import axios from 'axios';
+import React, { useState } from "react";
+import "./Login.css";
 
-function Login() {
-  const [username, setUsername] = useState('');
-  const [password, setPassword] = useState('');
+const Login = () => {
+  const [username, setUsername] = useState("");
+  const [password, setPassword] = useState("");
 
   const handleLogin = () => {
-    axios.post('/api/auth/login', { username, password })
-      .then(res => {
-        localStorage.setItem('token', res.data.token);
-        alert('Login successful');
-      })
-      .catch(err => alert('Login failed'));
+    // Giriş işlemi burada yapılır
+    console.log("Login:", username, password);
+  };
+
+  const handleRegisterRedirect = () => {
+    window.location.href = "/register";
   };
 
   return (
-    <div className="container mt-5">
-      <h2>Login</h2>
-      <input type="text" placeholder="Username" className="form-control mb-2"
-             value={username} onChange={e => setUsername(e.target.value)} />
-      <input type="password" placeholder="Password" className="form-control mb-2"
-             value={password} onChange={e => setPassword(e.target.value)} />
-      <button className="btn btn-primary" onClick={handleLogin}>Login</button>
+    <div className="login-container">
+      <div className="login-card">
+        <h2>Welcome Back</h2>
+        <input
+          type="text"
+          placeholder="Username"
+          value={username}
+          onChange={(e) => setUsername(e.target.value)}
+          className="login-input"
+        />
+        <input
+          type="password"
+          placeholder="Password"
+          value={password}
+          onChange={(e) => setPassword(e.target.value)}
+          className="login-input"
+        />
+        <button onClick={handleLogin} className="login-button">
+          Login
+        </button>
+        <p className="register-text">Don't you have an account?</p>
+        <button onClick={handleRegisterRedirect} className="register-button">
+          Create an account
+        </button>
+      </div>
     </div>
   );
-}
+};
 
 export default Login;

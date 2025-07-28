@@ -5,6 +5,7 @@ import Login from './components/Login';
 import Travel from './components/Travel';
 import Recipe from './components/Recipe';
 import AdminPanel from './components/AdminPanel';
+import WhoAmI from "./components/WhoAmI";
 
 function App() {
   return (
@@ -15,6 +16,7 @@ function App() {
         <Route path="/travel" element={<Travel />} />
         <Route path="/recipes" element={<Recipe />} />
         <Route path="/admin" element={<AdminPanel />} />
+        <Route path="/whoami" element={<WhoAmI />} />
       </Routes>
     </Router>
   );
