@@ -25,3 +25,4 @@ To run the application using docker-compose, you can use the following command:
 ```bash
 docker-compose up
 ```
+
