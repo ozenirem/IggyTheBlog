@@ -18,6 +18,10 @@ public class TravelService {
         return repository.findAll();
     }
 
+    public List<Travel> getByCountry(String country) {
+        return repository.findByCountry(country);
+    }
+
     public Travel create(Travel travel) {
         return repository.save(travel);
     }

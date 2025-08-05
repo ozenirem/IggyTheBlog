@@ -1,13 +1,11 @@
 package com.blog.myblog.repository.model;
 
-import jakarta.persistence.Entity;
-import jakarta.persistence.GeneratedValue;
-import jakarta.persistence.GenerationType;
-import jakarta.persistence.Id;
-import jakarta.persistence.Table;
+import jakarta.persistence.*;
 import lombok.AllArgsConstructor;
 import lombok.Data;
 import lombok.NoArgsConstructor;
+
+import java.util.List;
 
 @Entity
 @Data
@@ -18,7 +16,13 @@ public class Travel {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
-    private String title;
+
+    private String title;           // Roma Travel Guide
+    private String location;        // Roma
+    private String country;         // Italy
     private String description;
-    private String location;
+    private String imageUrl;
+
+    @OneToMany(mappedBy = "cityTravel", cascade = CascadeType.ALL, orphanRemoval = true)
+    private List<CityTravelContent> sections;
 }

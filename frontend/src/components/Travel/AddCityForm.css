@@ -1,0 +1,42 @@
+.add-city-form {
+  max-width: 600px;
+  margin: 30px auto;
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+  background-color: #f0f7f0;
+  padding: 20px;
+  border-radius: 10px;
+}
+
+.add-city-form input,
+.add-city-form textarea {
+  padding: 8px;
+  border-radius: 6px;
+  border: 1px solid #ccc;
+  width: 100%;
+}
+
+.section-buttons button {
+  margin-right: 10px;
+  padding: 6px 12px;
+  background-color: #4CAF50;
+  color: white;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+}
+
+.section-block {
+  margin-top: 10px;
+}
+
+button[type="submit"] {
+  background-color: #388e3c;
+  color: white;
+  padding: 10px;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  font-weight: bold;
+}
